@@ -12,11 +12,13 @@ var FindProxyForURL = function(init, profiles) {
     "+ss-auto": "+__ruleListOf_ss-auto",
     "+__ruleListOf_ss-auto": function(url, host, scheme) {
         "use strict";
+        if (/^https:\/\/share\.dmhy\.org/.test(url)) return "DIRECT";
         if (/^http:\/\/blog\.ontrac\.com/.test(url)) return "DIRECT";
         if (/^http:\/\/store\.sprite\.org/.test(url)) return "DIRECT";
         if (/(?:^|\.)intl\.target\.com$/.test(host)) return "DIRECT";
         if (/^http:\/\/xx\.wwwhost\.biz/.test(url)) return "DIRECT";
         if (/(?:^|\.).*v6\.facebook\.com$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)redirector\.gvt1\.com$/.test(host)) return "DIRECT";
         if (/^http:\/\/v2ex\.com/.test(url)) return "DIRECT";
         if (/^http:\/\/cdn\.v2ex\.com/.test(url)) return "DIRECT";
         if (/^http:\/\/cn\.v2ex\.com/.test(url)) return "DIRECT";
@@ -155,6 +157,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)so\.com$/.test(host)) return "DIRECT";
         if (/(?:^|\.)soso\.com$/.test(host)) return "DIRECT";
         if (/(?:^|\.)taobao\.com$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)uluai\.com\.cn$/.test(host)) return "DIRECT";
         if (/(?:^|\.)weibo\.com$/.test(host)) return "DIRECT";
         if (/(?:^|\.)yahoo\.cn$/.test(host)) return "DIRECT";
         if (/(?:^|\.)youdao\.com$/.test(host)) return "DIRECT";
@@ -170,10 +173,13 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)altrec\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)arena\.taipei$/.test(host)) return "+ss";
         if (/(?:^|\.)asianspiss\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)assimp\.org$/.test(host)) return "+ss";
         if (/(?:^|\.)athenaeizou\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)azubu\.tv$/.test(host)) return "+ss";
+        if (/(?:^|\.)banorte\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)bash-hackers\.org$/.test(host)) return "+ss";
         if (/(?:^|\.)beeg\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)global\.bing\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)bloombergview\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)boysmaster\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)carfax\.com$/.test(host)) return "+ss";
@@ -185,8 +191,10 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)crossfire\.co\.kr$/.test(host)) return "+ss";
         if (/(?:^|\.)d2pass\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)darpa\.mil$/.test(host)) return "+ss";
+        if (/(?:^|\.)dawangidc\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)deezer\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)desipro\.de$/.test(host)) return "+ss";
+        if (/(?:^|\.)dingchin\.com\.tw$/.test(host)) return "+ss";
         if (/(?:^|\.)dish\.com$/.test(host)) return "+ss";
         if (/^http:\/\/img\.dlsite\.jp\//.test(url)) return "+ss";
         if (/(?:^|\.)dm530\.net$/.test(host)) return "+ss";
@@ -211,6 +219,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)gettyimages\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)getuploader\.com$/.test(host)) return "+ss";
         if (/^https:\/\/github\.com\/programthink\/zhao/.test(url)) return "+ss";
+        if (/^https:\/\/raw\.githubusercontent\.com\/programthink\/zhao/.test(url)) return "+ss";
         if (/(?:^|\.)glass8\.eu$/.test(host)) return "+ss";
         if (/(?:^|\.)glype\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)go141\.com$/.test(host)) return "+ss";
@@ -271,6 +280,11 @@ var FindProxyForURL = function(init, profiles) {
         if (/^http:\/\/www\.nbc\.com\/live/.test(url)) return "+ss";
         if (/(?:^|\.)neo-miracle\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)netflix\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)nflximg\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)nflximg\.net$/.test(host)) return "+ss";
+        if (/(?:^|\.)nflxext\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)nflxso\.net$/.test(host)) return "+ss";
+        if (/(?:^|\.)nflxvideo\.net$/.test(host)) return "+ss";
         if (/^http:\/\/mo\.nightlife141\.com/.test(url)) return "+ss";
         if (/(?:^|\.)nordstrom\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)nordstromimage\.com$/.test(host)) return "+ss";
@@ -286,6 +300,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)pandora\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".pandora.tv") >= 0) return "+ss";
         if (/(?:^|\.)parkansky\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)phmsociety\.org$/.test(host)) return "+ss";
         if (/^http:\/\/.*\.pimg\.tw\//.test(url)) return "+ss";
         if (/(?:^|\.)pure18\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)qq\.co\.za$/.test(host)) return "+ss";
@@ -303,6 +318,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)spotify\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)springboardplatform\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)sprite\.org$/.test(host)) return "+ss";
+        if (/(?:^|\.)superokayama\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)superpages\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)swagbucks\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)switch1\.jp$/.test(host)) return "+ss";
@@ -314,6 +330,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)tryheart\.jp$/.test(host)) return "+ss";
         if (/(?:^|\.)turntable\.fm$/.test(host)) return "+ss";
         if (/(?:^|\.)twerkingbutt\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)ulop\.net$/.test(host)) return "+ss";
         if (/(?:^|\.)vegasred\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)vevo\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)vip-enterprise\.com$/.test(host)) return "+ss";
@@ -325,10 +342,13 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)wheretowatch\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)wingamestore\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)wizcrafts\.net$/.test(host)) return "+ss";
+        if (/(?:^|\.)vod\.wwe\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)xfinity\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)ytn\.co\.kr$/.test(host)) return "+ss";
         if (/(?:^|\.)zattoo\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)zozotown\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf("14.102.250.18") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf("14.102.250.19") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("50.7.31.230:8898") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("174.142.105.153") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("69.65.19.160") >= 0) return "+ss";
@@ -578,6 +598,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)com\.google$/.test(host)) return "+ss";
         if (/(?:^|\.)creativelab5\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)data-vocabulary\.org$/.test(host)) return "+ss";
+        if (/(?:^|\.)debug\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)deepmind\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)deja\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)design\.google$/.test(host)) return "+ss";
@@ -748,7 +769,10 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)173ng\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".177pic.info") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".17t17p.com") >= 0) return "+ss";
+        if (/(?:^|\.)18board\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)18board\.info$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("18onlygirls.com") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".18p2p.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".18virginsex.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".1949er.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("zhao.1984.city") >= 0) return "+ss";
@@ -948,6 +972,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/^http:\/\/amitabhafoundation\.us/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".amnesty.org") >= 0) return "+ss";
         if (/(?:^|\.)amnesty\.org$/.test(host)) return "+ss";
+        if (/(?:^|\.)amnesty\.org\.hk$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".amnesty.tw") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".amnestyusa.org") >= 0) return "+ss";
         if (/(?:^|\.)amnestyusa\.org$/.test(host)) return "+ss";
@@ -1155,6 +1180,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".berm.co.nz") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".bestforchina.org") >= 0) return "+ss";
         if (/(?:^|\.)bestforchina\.org$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".bestgore.com") >= 0) return "+ss";
         if (/(?:^|\.)bestvpn\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".bestvpnserver.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".bestvpnservice.com") >= 0) return "+ss";
@@ -1289,6 +1315,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".break.com") >= 0) return "+ss";
         if (/(?:^|\.)break\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("breakgfw.com") >= 0) return "+ss";
+        if (/(?:^|\.)breakgfw\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".breakingtweets.com") >= 0) return "+ss";
         if (/(?:^|\.)breakingtweets\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)breakwall\.net$/.test(host)) return "+ss";
@@ -1296,6 +1323,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".briefdream.com/%E7%B4%A0%E6%A3%BA") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("brizzly.com") >= 0) return "+ss";
         if (/(?:^|\.)brizzly\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)brkmd\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("broadbook.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".broadpressinc.com") >= 0) return "+ss";
         if (/(?:^|\.)broadpressinc\.com$/.test(host)) return "+ss";
@@ -1306,6 +1334,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".bt2mag.com") >= 0) return "+ss";
         if (/(?:^|\.)bt95\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".btaia.com") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".btbtav.com") >= 0) return "+ss";
         if (/^http:\/\/btdigg\.org/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".btku.me") >= 0) return "+ss";
         if (/(?:^|\.)btku\.me$/.test(host)) return "+ss";
@@ -1330,8 +1359,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".businessinsider.com/internet-outages-reported-in-north-korea-2014") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".businessinsider.com/iphone-6-is-approved-for-sale-in-china-2014") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".businessinsider.com/nfl-announcers-surface-tablets-2014") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".businessinsider.com/panama-papers") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".businessinsider.com/umbrella-man-hong-kong-2014") >= 0) return "+ss";
-        if (/^http:\/\/static.*\.businessinsider\.com\//.test(url)) return "+ss";
         if (/^http:\/\/www\.businessinsider\.com\.au\//.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".businessweek.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".busu.org/news") >= 0) return "+ss";
@@ -1342,6 +1371,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".buzzhand.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".buzzorange.com") >= 0) return "+ss";
         if (/(?:^|\.)buzzorange\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)bvpn\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("bwsj.hk") >= 0) return "+ss";
         if (/(?:^|\.)bx\.tl$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".c-spanvideo.org") >= 0) return "+ss";
@@ -1465,6 +1495,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)changp\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".changsa.net") >= 0) return "+ss";
         if (/^http:\/\/changsa\.net/.test(url)) return "+ss";
+        if (scheme === "http" && url.indexOf(".channel8news.sg/news8") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".chapm25.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".chaturbate.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".chuang-yen.org") >= 0) return "+ss";
@@ -1494,7 +1525,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("chinaaid.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("chinacomments.org") >= 0) return "+ss";
         if (/(?:^|\.)chinacomments\.org$/.test(host)) return "+ss";
-        if (scheme === "http" && url.indexOf("chinachange.org") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".chinachange.org") >= 0) return "+ss";
+        if (/(?:^|\.)chinachange\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("chinachannel.hk") >= 0) return "+ss";
         if (/(?:^|\.)chinachannel\.hk$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".chinacitynews.be") >= 0) return "+ss";
@@ -1698,6 +1730,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("csdparty.com") >= 0) return "+ss";
         if (/(?:^|\.)csdparty\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)csuchen\.de$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".csw.org.uk") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ctao.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ctfriend.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ctitv.com.tw") >= 0) return "+ss";
@@ -1871,6 +1904,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".dotplane.com") >= 0) return "+ss";
         if (/(?:^|\.)dotplane\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)dotsub\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".dotvpn.com") >= 0) return "+ss";
+        if (/(?:^|\.)dotvpn\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".doub.io") >= 0) return "+ss";
         if (/(?:^|\.)doub\.io$/.test(host)) return "+ss";
         if (/(?:^|\.)dougscripts\.com$/.test(host)) return "+ss";
@@ -1946,7 +1981,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".e-zone.com.hk/discuz") >= 0) return "+ss";
         if (/^http:\/\/e-zone\.com\.hk\/discuz/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".e123.hk") >= 0) return "+ss";
-        if (/^http:\/\/e123\.hk\//.test(url)) return "+ss";
+        if (/(?:^|\.)e123\.hk$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".earlytibet.com") >= 0) return "+ss";
         if (/^http:\/\/earlytibet\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".earthcam.com") >= 0) return "+ss";
@@ -2005,6 +2040,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)enewstree\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".enfal.de") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("chinese.engadget.com") >= 0) return "+ss";
+        if (/(?:^|\.)engagedaily\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("englishforeveryone.org") >= 0) return "+ss";
         if (/(?:^|\.)englishfromengland\.co\.uk$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("englishpen.org") >= 0) return "+ss";
@@ -2064,7 +2100,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("etaiwannews.com") >= 0) return "+ss";
         if (/(?:^|\.)etizer\.org$/.test(host)) return "+ss";
         if (/(?:^|\.)etokki\.com$/.test(host)) return "+ss";
-        if (scheme === "http" && url.indexOf(".ettoday.net") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ettoday.net/news/20151216/614081") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("etvonline.hk") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".eu.org") >= 0) return "+ss";
         if (/(?:^|\.)eu\.org$/.test(host)) return "+ss";
@@ -2210,6 +2246,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)findyoutube\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".fingerdaily.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("finler.net") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".firearmsworld.net") >= 0) return "+ss";
+        if (/^http:\/\/firearmsworld\.net/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".fireofliberty.org") >= 0) return "+ss";
         if (/(?:^|\.)fireofliberty\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".firetweet.io") >= 0) return "+ss";
@@ -2223,6 +2261,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)flickr\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)staticflickr\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("flickrhivemind.net") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".flickriver.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".fling.com") >= 0) return "+ss";
         if (/(?:^|\.)flipkart\.com$/.test(host)) return "+ss";
         if (/^http:\/\/cn\.fmnnow\.com/.test(url)) return "+ss";
@@ -2232,7 +2271,6 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("fangong.forums-free.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("pioneer-worker.forums-free.com") >= 0) return "+ss";
         if (/^https:\/\/ss.*\.4sqi\.net/.test(url)) return "+ss";
-        if (/(?:^|\.)fotop\.net$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("video.foxbusiness.com") >= 0) return "+ss";
         if (/^http:\/\/foxgay\.com/.test(url)) return "+ss";
         if (/(?:^|\.)fringenetwork\.com$/.test(host)) return "+ss";
@@ -2263,11 +2301,10 @@ var FindProxyForURL = function(init, profiles) {
         if (/^http:\/\/freakshare\.com/.test(url)) return "+ss";
         if (/(?:^|\.)free4u\.com\.ar$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("free-gate.org") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".free-hada-now.org") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf("free-proxy.cz") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".free.fr/adsl") >= 0) return "+ss";
-        if (/(?:^|\.)allonlinux\.free\.fr$/.test(host)) return "+ss";
-        if (/(?:^|\.)dimitrik\.free\.fr$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("kineox.free.fr") >= 0) return "+ss";
-        if (/(?:^|\.)puttycm\.free\.fr$/.test(host)) return "+ss";
         if (/(?:^|\.)freealim\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("whitebear.freebearblog.org") >= 0) return "+ss";
         if (/(?:^|\.)freebrowser\.org$/.test(host)) return "+ss";
@@ -2282,9 +2319,9 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".freefuckvids.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".freegao.com") >= 0) return "+ss";
         if (/(?:^|\.)freegao\.com$/.test(host)) return "+ss";
-        if (scheme === "http" && url.indexOf(".free-hada-now.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("freeilhamtohti.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".freekwonpyong.org") >= 0) return "+ss";
+        if (/(?:^|\.)saveliuxiaobo\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".freelotto.com") >= 0) return "+ss";
         if (/(?:^|\.)freelotto\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("freeman2.com") >= 0) return "+ss";
@@ -2343,7 +2380,11 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".ftchinese.com/channel/video") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/00102753") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001026807") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001030502") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001032692") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001034926") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001034927") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001034928") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001037090") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001037091") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001038220") >= 0) return "+ss";
@@ -2404,6 +2445,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001062741") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001062794") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001063160") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001063359") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001063692") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001063826") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001065287") >= 0) return "+ss";
@@ -2420,6 +2462,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001068483") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001069373") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001069516") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001069517") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001070307") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001070809") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001070990") >= 0) return "+ss";
@@ -2428,9 +2471,11 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001071181") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001071208") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/story/001071238") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001073408") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/video/1437") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/video/1882") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".ftchinese.com/comments") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ftv.com.tw") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("fucd.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".fuckcnnic.net") >= 0) return "+ss";
         if (/(?:^|\.)fuckcnnic\.net$/.test(host)) return "+ss";
@@ -2481,6 +2526,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)gardennetworks\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("72.52.81.22") >= 0) return "+ss";
         if (/(?:^|\.)gartlive\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)gate-project\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)gather\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("gati.org.tw") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".gaybubble.com") >= 0) return "+ss";
@@ -2513,6 +2559,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)geohot\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)geometrictools\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".gerefoundation.org") >= 0) return "+ss";
+        if (/(?:^|\.)getastrill\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".getchu.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".getcloak.com") >= 0) return "+ss";
         if (/(?:^|\.)getcloak\.com$/.test(host)) return "+ss";
@@ -2526,13 +2573,14 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".getjetso.com/forum") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("getiton.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".getsocialscope.com") >= 0) return "+ss";
+        if (/(?:^|\.)getsync\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("gfbv.de") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".gfgold.com.hk") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".gfsale.com") >= 0) return "+ss";
         if (/(?:^|\.)gfsale\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("gfw.org.ua") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".gfw.press") >= 0) return "+ss";
-        if (/^http:\/\/gfw\.press/.test(url)) return "+ss";
+        if (/(?:^|\.)gfw\.press$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".ggssl.com") >= 0) return "+ss";
         if (/(?:^|\.)ggssl\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)ghost\.org$/.test(host)) return "+ss";
@@ -2548,7 +2596,6 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".git.io") >= 0) return "+ss";
         if (/(?:^|\.)git\.io$/.test(host)) return "+ss";
         if (/^http:\/\/softwaredownload\.gitbooks\.io/.test(url)) return "+ss";
-        if (scheme === "http" && url.indexOf(".github.com") >= 0) return "+ss";
         if (/^https:\/\/gist\.github\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf("http://cthlo.github.io/hktv") >= 0) return "+ss";
         if (/(?:^|\.)haoel\.github\.io$/.test(host)) return "+ss";
@@ -2805,6 +2852,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".hk-pub.com/forum") >= 0) return "+ss";
         if (/^http:\/\/hk-pub\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".hk01.com") >= 0) return "+ss";
+        if (/(?:^|\.)hk01\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".hk32168.com") >= 0) return "+ss";
         if (/(?:^|\.)hk32168\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)hkacg\.com$/.test(host)) return "+ss";
@@ -3007,6 +3055,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)ihakka\.net$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".ihao.org/dz5") >= 0) return "+ss";
         if (/(?:^|\.)iicns\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".ikstar.com") >= 0) return "+ss";
         if (/(?:^|\.)illusionfactory\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)ilove80\.be$/.test(host)) return "+ss";
         if (/(?:^|\.)im\.tv$/.test(host)) return "+ss";
@@ -3069,7 +3118,6 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("inxian.com") >= 0) return "+ss";
         if (/(?:^|\.)inxian\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("ipalter.com") >= 0) return "+ss";
-        if (/(?:^|\.)ipcf\.org\.tw$/.test(host)) return "+ss";
         if (/(?:^|\.)iphone4hongkong\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)iphonehacks\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)iphonetaiwan\.org$/.test(host)) return "+ss";
@@ -3085,6 +3133,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".ipredator.se") >= 0) return "+ss";
         if (/(?:^|\.)ipredator\.se$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".iptv.com.tw") >= 0) return "+ss";
+        if (/(?:^|\.)iptvbin\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)ipvanish\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("iredmail.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("chinese.irib.ir") >= 0) return "+ss";
@@ -3152,6 +3201,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".jandyx.com") >= 0) return "+ss";
         if (/(?:^|\.)janwongphoto\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)japan-whores\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".jav101.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".jav2be.com") >= 0) return "+ss";
         if (/(?:^|\.)jav2be\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".jav68.tv") >= 0) return "+ss";
@@ -3265,6 +3315,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)kebrum\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".kechara.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".keepandshare.com/visit/visit_page.php?i=688154") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".keezmovies.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".kendincos.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".kenengba.com") >= 0) return "+ss";
         if (/(?:^|\.)kenengba\.com$/.test(host)) return "+ss";
@@ -3317,9 +3368,12 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("kusocity.com") >= 0) return "+ss";
         if (/(?:^|\.)kwcg\.ca$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("kwongwah.com.my") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".kxsw.life") >= 0) return "+ss";
+        if (/(?:^|\.)kxsw\.life$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".kyofun.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("kyohk.net") >= 0) return "+ss";
         if (/(?:^|\.)kyoyue\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".kyzyhello.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".kzeng.info") >= 0) return "+ss";
         if (/(?:^|\.)kzeng\.info$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("la-forum.org") >= 0) return "+ss";
@@ -3404,6 +3458,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("linuxtoy.org/archives/installing-west-chamber-on-ubuntu") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".lionsroar.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".lipuman.com") >= 0) return "+ss";
+        if (/(?:^|\.)liquidvpn\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)greatfire\.us7\.list-manage\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)listentoyoutube\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("listorious.com") >= 0) return "+ss";
@@ -3411,6 +3466,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".liuhanyu.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".liujianshu.com") >= 0) return "+ss";
         if (/(?:^|\.)liujianshu\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".liuxiaobo.net") >= 0) return "+ss";
+        if (/^http:\/\/liuxiaobo\.net/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf("liuxiaotong.com") >= 0) return "+ss";
         if (/(?:^|\.)liuxiaotong\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".livedoor.jp") >= 0) return "+ss";
@@ -3672,6 +3729,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("mpfinance.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("mpinews.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("mponline.hk") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".mqxd.org") >= 0) return "+ss";
+        if (/^http:\/\/mqxd\.org/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf("mrtweet.com") >= 0) return "+ss";
         if (/(?:^|\.)mrtweet\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("news.hk.msn.com") >= 0) return "+ss";
@@ -3759,6 +3818,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".naol.ca") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".naol.cc") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("uighur.narod.ru") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".nat.moe") >= 0) return "+ss";
+        if (/(?:^|\.)nat\.moe$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("cyberghost.natado.com") >= 0) return "+ss";
         if (/(?:^|\.)national-lottery\.co\.uk$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("news.nationalgeographic.com/news/2014/06/140603-tiananmen-square") >= 0) return "+ss";
@@ -3787,6 +3848,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("netsneak.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".network54.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("networkedblogs.com") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".networktunnel.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("neverforget8964.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("new-3lunch.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".new-akiba.com") >= 0) return "+ss";
@@ -3849,6 +3911,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("sytes.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".whodns.xyz") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".zapto.org") >= 0) return "+ss";
+        if (/^http:\/\/dynupdate\.no-ip\.com\//.test(url)) return "+ss";
         if (/(?:^|\.)nobel\.se$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("nobelprize.org/nobel_prizes/peace/laureates/1989") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("nobelprize.org/nobel_prizes/peace/laureates/2010") >= 0) return "+ss";
@@ -3890,6 +3953,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)nurgo-software\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)nutaku\.net$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".nuvid.com") >= 0) return "+ss";
+        if (/(?:^|\.)nvdst\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("nuzcom.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".nvquan.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".nvtongzhisheng.org") >= 0) return "+ss";
@@ -3902,6 +3966,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("nylonstockingsonline.com") >= 0) return "+ss";
         if (/(?:^|\.)a1\.nyt\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)int\.nyt\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)s1\.nyt\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("static01.nyt.com") >= 0) return "+ss";
         if (/(?:^|\.)static01\.nyt\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)typeface\.nyt\.com$/.test(host)) return "+ss";
@@ -3915,6 +3980,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)nytimg\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("userapi.nytlog.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("cn.nytstyle.com") >= 0) return "+ss";
+        if (/(?:^|\.)nytstyle\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".nzchinese.com") >= 0) return "+ss";
         if (/(?:^|\.)nzchinese\.net\.nz$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("observechina.net") >= 0) return "+ss";
@@ -3935,6 +4001,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".oikos.com.tw/v4") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".oiktv.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("oizoblog.com") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".ok.ru") >= 0) return "+ss";
+        if (/(?:^|\.)ok\.ru$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".okayfreedom.com") >= 0) return "+ss";
         if (/(?:^|\.)okayfreedom\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("okk.tw") >= 0) return "+ss";
@@ -4027,6 +4095,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".paltalk.com") >= 0) return "+ss";
         if (/(?:^|\.)pangci\.net$/.test(host)) return "+ss";
         if (/(?:^|\.)panacom\.co\.jp$/.test(host)) return "+ss";
+        if (/(?:^|\.)pandapow\.co$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".pandapow.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".pandavpn-jp.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".panluan.net") >= 0) return "+ss";
@@ -4065,6 +4134,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)peace\.ca$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("peacefire.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("peacehall.com") >= 0) return "+ss";
+        if (/(?:^|\.)peacehall\.com$/.test(host)) return "+ss";
         if (/^http:\/\/pearlher\.org/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".peeasian.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".pekingduck.org") >= 0) return "+ss";
@@ -4110,8 +4180,17 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)pinimg\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".pinkrod.com") >= 0) return "+ss";
         if (/(?:^|\.)pinoy-n\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.at$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.co\.kr$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.co\.uk$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".pinterest.com") >= 0) return "+ss";
         if (/(?:^|\.)pinterest\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.de$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.dk$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.fr$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.jp$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.nl$/.test(host)) return "+ss";
+        if (/(?:^|\.)pinterest\.se$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".piposay.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("piraattilahti.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".piring.com") >= 0) return "+ss";
@@ -4188,6 +4267,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("proxyanonimo.es") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".proxynetwork.org.uk") >= 0) return "+ss";
         if (/(?:^|\.)proxynetwork\.org\.uk$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".pscp.tv") >= 0) return "+ss";
+        if (/(?:^|\.)pscp\.tv$/.test(host)) return "+ss";
         if (/(?:^|\.)pts\.org\.tw$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".pttvan.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("pubu.com.tw") >= 0) return "+ss";
@@ -4288,6 +4369,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)qtrac\.eu$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".quannengshen.org") >= 0) return "+ss";
         if (/^http:\/\/quannengshen\.org/.test(url)) return "+ss";
+        if (scheme === "http" && url.indexOf("quantumbooter.net") >= 0) return "+ss";
         if (/(?:^|\.)quitccp\.net$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".quitccp.net") >= 0) return "+ss";
         if (/(?:^|\.)quitccp\.org$/.test(host)) return "+ss";
@@ -4347,6 +4429,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".recovery.org.tw") >= 0) return "+ss";
         if (/^http:\/\/online\.recoveryversion\.org/.test(url)) return "+ss";
         if (/(?:^|\.)recoveryversion\.com\.tw$/.test(host)) return "+ss";
+        if (/(?:^|\.)red-lang\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".redchinacn.net") >= 0) return "+ss";
         if (/^http:\/\/redchinacn\.net/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf("redchinacn.org") >= 0) return "+ss";
@@ -4363,6 +4446,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)renyurenquan\.org$/.test(host)) return "+ss";
         if (/^http:\/\/certificate\.revocationcheck\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf("subacme.rerouted.org") >= 0) return "+ss";
+        if (/(?:^|\.)resilio\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".reuters.com") >= 0) return "+ss";
         if (/(?:^|\.)reuters\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)reutersmedia\.net$/.test(host)) return "+ss";
@@ -4395,7 +4479,6 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)rocket-inc\.net$/.test(host)) return "+ss";
         if (/^http:\/\/www2\.rocketbbs\.com\/11\/bbs\.cgi.id=5mus/.test(url)) return "+ss";
         if (/^http:\/\/www2\.rocketbbs\.com\/11\/bbs\.cgi.id=freemgl/.test(url)) return "+ss";
-        if (/(?:^|\.)rocmp\.org$/.test(host)) return "+ss";
         if (/(?:^|\.)rojo\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)ronjoneswriter\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)rolia\.net$/.test(host)) return "+ss";
@@ -4688,6 +4771,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("chinese.soifind.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("sokamonline.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".solidaritetibet.org") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".solidfiles.com") >= 0) return "+ss";
         if (/(?:^|\.)somee\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".songjianjun.com") >= 0) return "+ss";
         if (/(?:^|\.)songjianjun\.com$/.test(host)) return "+ss";
@@ -5002,6 +5086,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("tibet.nu") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".tibet.org") >= 0) return "+ss";
         if (/(?:^|\.)tibet\.org$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".tibet.sk") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("tibet.org.tw") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".tibet.to") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".tibet-envoy.eu") >= 0) return "+ss";
@@ -5091,6 +5176,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("tibettimes.net") >= 0) return "+ss";
         if (/(?:^|\.)tibetwrites\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".ticket.com.tw") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".tigervpn.com") >= 0) return "+ss";
+        if (/(?:^|\.)tigervpn\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".timdir.com") >= 0) return "+ss";
         if (/^http:\/\/timdir\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".time.com") >= 0) return "+ss";
@@ -5210,6 +5297,8 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".tunein.com") >= 0) return "+ss";
         if (/^http:\/\/tunein\.com/.test(url)) return "+ss";
         if (/(?:^|\.)tunnelbear\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".tunnelr.com") >= 0) return "+ss";
+        if (/(?:^|\.)tunnelr\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".tuo8.blue") >= 0) return "+ss";
         if (/(?:^|\.)tuo8\.blue$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".tuo8.cc") >= 0) return "+ss";
@@ -5243,6 +5332,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/^http:\/\/tw01\.org/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".tumblr.com") >= 0) return "+ss";
         if (/(?:^|\.)tumblr\.com$/.test(host)) return "+ss";
+        if (/^http:\/\/blog\.soylent\.com\//.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".tv.com") >= 0) return "+ss";
         if (/^http:\/\/tv\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf("tvants.com") >= 0) return "+ss";
@@ -5264,6 +5354,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)twapperkeeper\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)twaud\.io$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".twaud.io") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".twavi.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".twbbs.net.tw") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("twbbs.org") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("twbbs.tw") >= 0) return "+ss";
@@ -5277,6 +5368,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)tweetboard\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".tweetboner.biz") >= 0) return "+ss";
         if (/(?:^|\.)tweetboner\.biz$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".tweetcs.com") >= 0) return "+ss";
+        if (/^http:\/\/tweetcs\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".tweetdeck.com") >= 0) return "+ss";
         if (/(?:^|\.)tweetdeck\.com$/.test(host)) return "+ss";
         if (/^http:\/\/deck\.ly/.test(url)) return "+ss";
@@ -5292,6 +5385,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)tweettunnel\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)tweetwally\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("tweetymail.com") >= 0) return "+ss";
+        if (/(?:^|\.)twelve\.today$/.test(host)) return "+ss";
         if (/(?:^|\.)twftp\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("twibase.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".twibble.de") >= 0) return "+ss";
@@ -5395,6 +5489,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)contests\.twilio\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".embr.in") >= 0) return "+ss";
         if (/(?:^|\.)embr\.in$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".u9un.com") >= 0) return "+ss";
+        if (/(?:^|\.)u9un\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".ubddns.org") >= 0) return "+ss";
         if (/^http:\/\/ubddns\.org/.test(url)) return "+ss";
         if (/(?:^|\.)uberproxy\.net$/.test(host)) return "+ss";
@@ -5425,6 +5521,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("ultraxs.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("umich.edu/~falun") >= 0) return "+ss";
         if (/(?:^|\.)unblock\.cn\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".unblocker.yt") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("unblock-us.com") >= 0) return "+ss";
         if (/(?:^|\.)unblock-us\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".unblockdmm.com") >= 0) return "+ss";
@@ -5568,6 +5665,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("voachinese.com") >= 0) return "+ss";
         if (/(?:^|\.)voachinese\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".voanews.com") >= 0) return "+ss";
+        if (/(?:^|\.)voanews\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("voatibetan.com") >= 0) return "+ss";
         if (/(?:^|\.)voatibetan\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".voatibetanenglish.com") >= 0) return "+ss";
@@ -5581,6 +5679,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".voxer.com") >= 0) return "+ss";
         if (/(?:^|\.)voxer\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".voy.com") >= 0) return "+ss";
+        if (/(?:^|\.)vpn\.ac$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".vpn4all.com") >= 0) return "+ss";
         if (/(?:^|\.)vpn4all\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".vpnaccount.org") >= 0) return "+ss";
@@ -5611,6 +5710,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)vpninja\.net$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".vpnintouch.com") >= 0) return "+ss";
         if (/(?:^|\.)vpnintouch\.net$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf("vpnjack.com") >= 0) return "+ss";
+        if (/(?:^|\.)vpnjack\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".vpnpick.com") >= 0) return "+ss";
         if (/(?:^|\.)vpnpick\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)vpnpop\.com$/.test(host)) return "+ss";
@@ -5622,6 +5723,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)vpnsecure\.me$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".vpnshazam.com") >= 0) return "+ss";
         if (/(?:^|\.)vpnshazam\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".vpnshieldapp.com") >= 0) return "+ss";
+        if (/(?:^|\.)vpnshieldapp\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".vpnsp.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".vpntraffic.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".vpntunnel.com") >= 0) return "+ss";
@@ -5637,7 +5740,6 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("vraiesagesse.net") >= 0) return "+ss";
         if (/(?:^|\.)vtunnel\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)vuku\.cc$/.test(host)) return "+ss";
-        if (/(?:^|\.)w\.org$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("lists.w3.org/archives/public") >= 0) return "+ss";
         if (/(?:^|\.)waffle1999\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".wahas.com") >= 0) return "+ss";
@@ -5768,6 +5870,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)vegas\.williamhill\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)willw\.net$/.test(host)) return "+ss";
         if (/(?:^|\.)windowsphoneme\.com$/.test(host)) return "+ss";
+        if (scheme === "http" && url.indexOf(".windscribe.com") >= 0) return "+ss";
+        if (/(?:^|\.)windscribe\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("winning11.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("winwhispers.info") >= 0) return "+ss";
         if (/(?:^|\.)wiredbytes\.com$/.test(host)) return "+ss";
@@ -5806,6 +5910,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/^http:\/\/.*\.wordpress\.com/.test(url)) return "+ss";
         if (/(?:^|\.)cnbbnews\.wordpress\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)chenshan20042005\.wordpress\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)hkanews\.wordpress\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)jobnewera\.wordpress\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)sujiatun\.wordpress\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)wp\.com$/.test(host)) return "+ss";
@@ -5979,6 +6084,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".yipub.com") >= 0) return "+ss";
         if (/(?:^|\.)yipub\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("yinlei.org/mt") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".yizhihongxing.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".yobt.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".yogichen.org") >= 0) return "+ss";
         if (/(?:^|\.)yogichen\.org$/.test(host)) return "+ss";
@@ -6029,8 +6135,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/^http:\/\/yzzk\.com/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf("zacebook.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".zalmos.com") >= 0) return "+ss";
+        if (/(?:^|\.)zalmos\.com$/.test(host)) return "+ss";
         if (/(?:^|\.)zannel\.com$/.test(host)) return "+ss";
-        if (scheme === "http" && url.indexOf(".zaobao.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".zaobao.com.sg") >= 0) return "+ss";
         if (/(?:^|\.)zaobao\.com\.sg$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".zaozon.com") >= 0) return "+ss";
@@ -6038,6 +6144,9 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".zello.com") >= 0) return "+ss";
         if (/(?:^|\.)zello\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".zengjinyan.org") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".zenmate.com") >= 0) return "+ss";
+        if (/(?:^|\.)zenmate\.com$/.test(host)) return "+ss";
+        if (/(?:^|\.)zenmate\.com\.ru$/.test(host)) return "+ss";
         if (/(?:^|\.)zeutch\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".zfreet.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".zgsddh.com") >= 0) return "+ss";
@@ -6051,7 +6160,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf("zhenlibu.info") >= 0) return "+ss";
         if (/(?:^|\.)zhenlibu\.info$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".zhenlibu1984.com") >= 0) return "+ss";
-        if (/^http:\/\/zhenlibu1984\.com/.test(url)) return "+ss";
+        if (/(?:^|\.)zhenlibu1984\.com$/.test(host)) return "+ss";
         if (/^http:\/\/zhenxiang\.biz/.test(url)) return "+ss";
         if (scheme === "http" && url.indexOf(".zhinengluyou.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("zhongguo.ca") >= 0) return "+ss";
@@ -6060,7 +6169,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)zhongguotese\.net$/.test(host)) return "+ss";
         if (/(?:^|\.)zhongmeng\.org$/.test(host)) return "+ss";
         if (/(?:^|\.)zhreader\.com$/.test(host)) return "+ss";
-        if (scheme === "http" && url.indexOf("zhuangbi.me/account/login/url-Lw==") >= 0) return "+ss";
+        if (scheme === "http" && url.indexOf(".zhuangbi.me") >= 0) return "+ss";
+        if (/(?:^|\.)zhuangbi\.me$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".zhuanxing.cn") >= 0) return "+ss";
         if (/(?:^|\.)zhuatieba\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("zhuichaguoji.org") >= 0) return "+ss";
@@ -6085,6 +6195,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)zootool\.com$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".zoozle.net") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf("writer.zoho.com") >= 0) return "+ss";
+        if (/(?:^|\.)zpn\.im$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf(".zshare.net/download") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".zsrhao.com") >= 0) return "+ss";
         if (scheme === "http" && url.indexOf(".zuo.la") >= 0) return "+ss";
@@ -6113,6 +6224,7 @@ var FindProxyForURL = function(init, profiles) {
         if (scheme === "http" && url.indexOf(".gov.tw") >= 0) return "+ss";
         if (/(?:^|\.)tacc\.cwb\.gov\.tw$/.test(host)) return "+ss";
         if (scheme === "http" && url.indexOf("immigration.gov.tw") >= 0) return "+ss";
+        if (/(?:^|\.)mjib\.gov\.tw$/.test(host)) return "+ss";
         if (/(?:^|\.)nsc\.gov\.tw$/.test(host)) return "+ss";
         if (/(?:^|\.)ntbna\.gov\.tw$/.test(host)) return "+ss";
         if (/(?:^|\.)ntsna\.gov\.tw$/.test(host)) return "+ss";
